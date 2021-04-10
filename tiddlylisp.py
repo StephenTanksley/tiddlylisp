@@ -18,7 +18,7 @@ class Env(dict):
     "An environment: a dict of {'var':val} pairs, with an outer Env."
 
     def __init__(self, params=(), args=(), outer=None):
-        self.update(zip(params, args))
+        self.update(list(zip(params, args)))
         self.outer = outer
 
     def find(self, var):
